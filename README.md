@@ -1,8 +1,13 @@
 帮我装 x-timeline-archive，按 https://raw.githubusercontent.com/Xiao-yun-Hu/x-timeline-archive/main/SKILL.md 这个 skill 操作
 
+> [!WARNING]
+> **Use a burner account.** Prefer a dedicated X account you control instead of a personal/main account, because this tool uses session cookies. Do not use this tool to bypass access controls, rate limits, suspensions, or platform restrictions.
+
 # X Timeline Archive
 
 Archive posts from a single public X/Twitter account timeline into CSV, JSONL, and raw JSON files.
+
+This tool archives your own account or accounts you are authorized to access.
 
 This repository is also packaged as a Codex skill. If you only want the command-line tool, run `scripts/archive_x_timeline.py` directly.
 
