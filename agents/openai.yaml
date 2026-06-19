@@ -1,0 +1,4 @@
+interface:
+  display_name: "X Timeline Archive"
+  short_description: "Archive X/Twitter account timelines to CSV/JSONL"
+  default_prompt: "Use $x-timeline-archive to export an X/Twitter account timeline to CSV plus JSONL."

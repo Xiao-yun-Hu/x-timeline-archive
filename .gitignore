@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.env
+*.env
+node_modules/
+package-lock.json
+package.json
+!scripts/vendor/bird-search/package.json
+*-raw.json
+*.jsonl
+*.csv
+*-summary.json
+*-checkpoint.json
+proxy-preload.cjs
