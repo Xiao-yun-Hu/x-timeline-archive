@@ -1,3 +1,5 @@
+帮我装 x-timeline-archive，按 https://raw.githubusercontent.com/Xiao-yun-Hu/x-timeline-archive/main/SKILL.md 这个 skill 操作
+
 # X Timeline Archive
 
 Archive posts from a single public X/Twitter account timeline into CSV, JSONL, and raw JSON files.
