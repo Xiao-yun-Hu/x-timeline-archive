@@ -83,6 +83,20 @@ For `--prefix account-range`, the tool writes:
 
 CSV line counts can exceed tweet counts because tweet text may contain embedded newlines. Use a CSV parser for accurate row counts.
 
+## FAQ
+
+### How to export my X/Twitter timeline to CSV for free?
+
+Use `archive_x_timeline.py` with your own account handle and an authorized X session cookie. The tool does not require a paid X API key; it writes a normalized `.csv` file alongside JSONL and raw JSON outputs.
+
+### How to archive a Twitter account before deletion?
+
+Run the tool before deleting the account, using a date range that covers the posts you want to preserve. Use it only for your own account or an account you are explicitly authorized to access, then verify the generated CSV, JSONL, and raw JSON files before taking any destructive account action.
+
+### How to backup tweets to JSON without paying for X API?
+
+Run the tool with `--prefix account-range`; it will write `account-range.jsonl` for line-delimited normalized tweet records and `account-range-raw.json` for the raw tweet objects returned by the bundled backend. No paid X API key is required, but you still need valid session cookies from an account you are authorized to use.
+
 ## Codex Skill Files
 
 - `SKILL.md` is the agent-facing skill manifest and workflow.
