@@ -1,0 +1,58 @@
+# x-timeline-archive
+
+## Summary
+
+`x-timeline-archive` archives posts from a single public X/Twitter account timeline into CSV, JSONL, and raw JSON files. It can be used as a command-line tool or as a Codex skill.
+
+Use it only for your own account or accounts you are authorized to access. Do not use it to bypass access controls, rate limits, suspensions, privacy settings, or platform restrictions.
+
+## Important Files
+
+- `README.md` - human-facing setup, usage, FAQ, and safety notes
+- `SKILL.md` - agent-facing Codex skill instructions
+- `scripts/archive_x_timeline.py` - main CLI
+- `scripts/vendor/bird-search/` - bundled X search backend based on `@steipete/bird`
+- `references/auth-and-network.md` - auth, cookie, and proxy troubleshooting
+- `SECURITY.md` - responsible-use and secret-handling policy
+- `agents/openai.yaml` - UI metadata for skill-aware agent environments
+
+## Requirements
+
+- Python 3.10+
+- Node.js 22+
+- `npm` when proxy mode installs `undici`
+- `AUTH_TOKEN` and `CT0` cookies from an X session the user is authorized to use
+- macOS is best tested. Other systems should use `--proxy off` or an explicit proxy URL.
+
+## Typical CLI Usage
+
+```bash
+python3 scripts/archive_x_timeline.py \
+  --handle example_user \
+  --since 2025-01-01 \
+  --until 2025-07-01 \
+  --output-dir ~/Downloads/x-timeline-archive \
+  --prefix example_user-2025-01-01-to-2025-06-30 \
+  --max-rounds 140
+```
+
+`--until` is exclusive.
+
+## Outputs
+
+For `--prefix account-range`, the tool writes:
+
+- `account-range.csv`
+- `account-range.jsonl`
+- `account-range-raw.json`
+- `account-range-summary.json`
+- `account-range-checkpoint.json`
+
+Normalized fields are `id`, `created_at`, `username`, `url`, `text`, `reply_count`, `retweet_count`, `like_count`, and `view_count`.
+
+## Agent Guidance
+
+- Prefer editing `README.md`, `SKILL.md`, `SECURITY.md`, or `scripts/archive_x_timeline.py` for behavior/documentation changes.
+- Do not commit `.env`, `AUTH_TOKEN`, `CT0`, exports, `node_modules`, generated proxy preload files, CSV, JSONL, or raw JSON outputs.
+- Keep examples generic. Do not include personal filesystem paths, real private research targets, or session credentials.
+- If adding network behavior, preserve conservative rate-limit and responsible-use language.
